@@ -1,5 +1,6 @@
 package com.thebengalstudio.authentication.Service;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -7,10 +8,11 @@ import android.util.Log;
 
 public class network {
 
-    private static network instance = new network();
+    @SuppressLint("StaticFieldLeak")
+    private static final network instance = new network();
+    @SuppressLint("StaticFieldLeak")
     static Context context;
     ConnectivityManager connectivityManager;
-    NetworkInfo wifiInfo, mobileInfo;
     boolean connected = false;
 
     public static network getInstance(Context ctx) {

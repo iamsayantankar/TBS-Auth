@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     Context context = MainActivity.this;
 
     int logInReqCode = 200;
-    int logOutReqCode = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(context, "sign in", Toast.LENGTH_SHORT).show();
         }
 
-
     }
 
 
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK)
         {
 
-            if (requestCode == logInReqCode) {;
+            if (requestCode == logInReqCode) {
 
                 String app_passcode = data.getStringExtra("app_passcode");
                 String tbs_uid = data.getStringExtra("tbs_uid");
@@ -60,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
                         "auth_password: "+auth_password+"\nverify_password: "+verify_password;
                 Toast.makeText(context, tooo, Toast.LENGTH_SHORT).show();
 
-
-            }else if (requestCode == logOutReqCode){
 
             }
         }

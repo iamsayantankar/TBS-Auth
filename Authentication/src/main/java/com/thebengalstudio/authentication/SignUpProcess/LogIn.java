@@ -682,7 +682,9 @@ public class LogIn extends AppCompatActivity {
         cpassword = sConfirmPassword.getText().toString();
         phone_number = sPhoneNumber.getText().toString();
 
-        if (email.isEmpty()) {
+        if (name.isEmpty()) {
+            BeautifulToast.makeText(context, "Enter Name.", Toast.LENGTH_LONG, R.style.toaststyle_info).show();
+        } else if (email.isEmpty()) {
             BeautifulToast.makeText(context, "Enter Email Id.", Toast.LENGTH_LONG, R.style.toaststyle_info).show();
         } else if (password.isEmpty()) {
             BeautifulToast.makeText(context, "Enter password.", Toast.LENGTH_LONG, R.style.toaststyle_info).show();
