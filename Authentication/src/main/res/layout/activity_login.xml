@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    tools:context=".SignUpProcess.LogIn">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#9fff"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:id="@+id/logInPanel"
+                    android:padding="10dp">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/logo"
+                        android:gravity="center"
+                        android:layout_marginVertical="50dp"
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="@color/bg_btn_1"/>
+
+
+                    <EditText
+                        android:id="@+id/lUserName"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="#000" />
+
+                    <EditText
+                        android:id="@+id/lPassword"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColorHint="#000" />
+
+
+                    <Button
+                        android:id="@+id/lLogIn"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custombutton2"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="lLogIn"
+                        android:text="Log In"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
+
+
+                    <TextView
+                        android:id="@+id/lLinkSendMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="50dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:text="Check your mail inbox / Spam Folder / Update Folder..."
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <Button
+                        android:id="@+id/lCheck"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:text="Check Now"
+                        android:textSize="75px"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="10dp"
+                        android:onClick="lCheck"
+                        android:background="@drawable/custombutton2"
+                        android:textColor="@color/bg_txt_1"/>
+
+
+
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="#3fff"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lResendMail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:onClick="lResendMail"
+                        android:text="Resend Mail"
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+
+
+                    <TextView
+                        android:id="@+id/lForgetPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:onClick="lForgetPassword"
+                        android:text="Forget Password"
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="#3fff"
+                        android:layout_marginTop="15dp"/>
+
+                    <Button
+                        android:id="@+id/lSignUp"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:text="Sign Up"
+                        android:textSize="75px"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="10dp"
+                        android:onClick="lSignUp"
+                        android:background="@drawable/custombutton2"
+                        android:textColor="@color/bg_txt_1"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/forgetPasswordPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginVertical="50dp"
+                        android:gravity="center"
+                        android:src="@drawable/logo"
+                        app:civ_border_color="@color/bg_btn_1"
+                        app:civ_border_width="3dp" />
+
+
+                    <EditText
+                        android:id="@+id/fUserName"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="#000" />
+
+
+                    <Button
+                        android:id="@+id/fSendLink"
+                        android:layout_width="250dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custombutton2"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="fSendLink"
+                        android:text="Send reset link"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
+
+                    <TextView
+                        android:id="@+id/fLinkSendMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:paddingHorizontal="50dp"
+                        android:text="Check your mail inbox / Spam Folder / Update Folder..."
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <Button
+                        android:id="@+id/fCheck"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custombutton2"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="fCheck"
+                        android:text="Check Now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#3fff" />
+
+                    <TextView
+                        android:id="@+id/fResendMail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:onClick="fResendMail"
+                        android:text="Resend Mail"
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/fChangeUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:onClick="fChangeUsername"
+                        android:text="Change Username"
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#3fff" />
+
+                    <Button
+                        android:id="@+id/fLogIn"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custombutton2"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="fLogIn"
+                        android:text="Log In"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#3fff" />
+
+                    <Button
+                        android:id="@+id/fSignUp"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custombutton2"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="fSignUp"
+                        android:text="Sign Up"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:id="@+id/signUpPanel"
+                    android:padding="10dp">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginVertical="50dp"
+                        android:gravity="center"
+                        android:src="@drawable/logo"
+                        app:civ_border_color="@color/bg_btn_1"
+                        app:civ_border_width="3dp"
+                        tools:ignore="ImageContrastCheck" />
+
+
+                    <EditText
+                        android:id="@+id/sName"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:autofillHints=""
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textColorHint="#000" />
+
+                    <EditText
+                        android:id="@+id/sPhoneNumber"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:textColorHint="#000" />
+
+                    <EditText
+                        android:id="@+id/sEmail"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:autofillHints=""
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="#000" />
+
+                    <EditText
+                        android:id="@+id/sPassword"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:autofillHints=""
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColorHint="#000" />
+
+                    <EditText
+                        android:id="@+id/sConfirmPassword"
+                        android:layout_width="250dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/custombutton"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:gravity="center"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:textColorHint="#000" />
+
+
+
+
+                    <Button
+                        android:id="@+id/sSignUp"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:text="Sign Up"
+                        android:textSize="75px"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="10dp"
+                        android:onClick="sSignUp"
+                        android:background="@drawable/custombutton2"
+                        android:textColor="@color/bg_txt_1"/>
+
+                    <TextView
+                        android:id="@+id/sLinkSendMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="50dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:text="Check your mail inbox / Spam Folder / Update Folder..."
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/sCheck"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:text="Check Now"
+                        android:textSize="75px"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="10dp"
+                        android:onClick="sCheck"
+                        android:background="@drawable/custombutton2"
+                        android:textColor="@color/bg_txt_1"/>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="#3fff"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/sResendMail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:onClick="sResendMail"
+                        android:text="Resend Mail"
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sChangeEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:minHeight="48dp"
+                        android:onClick="sChangeEmail"
+                        android:text="Change Email"
+                        android:textColor="@color/bg_btn_2"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="#3fff"
+                        android:layout_marginTop="15dp"/>
+
+                    <Button
+                        android:id="@+id/sLogIn"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:text="Log In"
+                        android:textSize="75px"
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="10dp"
+                        android:onClick="sLogIn"
+                        android:background="@drawable/custombutton2"
+                        android:textColor="@color/bg_txt_1"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:id="@+id/time_show"
+        android:layout_width="match_parent"
+        android:padding="50dp"
+        android:layout_height="wrap_content">
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginVertical="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:src="@drawable/watch"
+            app:civ_border_color="@color/bg_btn_1"
+            app:civ_border_width="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/watch_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/ibarra_real_nova_bold"
+            android:minHeight="48dp"
+            android:paddingHorizontal="50dp"
+            android:text="28 Seconds"
+            android:textColor="@color/bg_txt_2"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
