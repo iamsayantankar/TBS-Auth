@@ -3,7 +3,6 @@ package com.thebengalstudio.authentication.Service;
 public class API {
     private static final String website_url = "https://auth.skosao.com";
 
-
     //TODO: User Auth Api
     private static final String auth_api = website_url+"";
     public static final String signup_api = auth_api+"/signup";                     //set

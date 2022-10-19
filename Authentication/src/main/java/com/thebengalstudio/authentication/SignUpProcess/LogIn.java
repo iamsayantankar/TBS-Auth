@@ -163,7 +163,6 @@ public class LogIn extends AppCompatActivity {
             startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
         } else {
             Show_loader(context);
-            Toast.makeText(context, login_api, Toast.LENGTH_SHORT).show();
             StringRequest createLogIn = new StringRequest(Request.Method.POST, login_api, response -> {
                 cancel_loader();
                 try {

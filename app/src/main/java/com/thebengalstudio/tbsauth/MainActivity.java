@@ -1,13 +1,33 @@
 package com.thebengalstudio.tbsauth;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import static com.thebengalstudio.authentication.Service.API.signup_api;
 import static com.thebengalstudio.authentication.Service.LogInCheck.*;
+import static com.thebengalstudio.authentication.Service.ProgressDialog.cancel_loader;
+import static com.thebengalstudio.authentication.Service.StoreValue.app_passcode;
+import static com.thebengalstudio.authentication.Service.StoreValue.app_uid;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.thebengalstudio.authentication.SignUpProcess.*;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +78,48 @@ public class MainActivity extends AppCompatActivity {
                         "auth_password: "+auth_password+"\nverify_password: "+verify_password;
                 Toast.makeText(context, tooo, Toast.LENGTH_SHORT).show();
 
+                StringRequest createSignUp = new StringRequest(Request.Method.POST, "https://auth.skosao.com/get_user_details", response -> {
+                    Log.w("MyAuth", response);
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        String success = jsonObject.getString("code");
+                        String message = jsonObject.getString("message");
+                        switch (success) {
+                            case "200":
+                                String dataS = jsonObject.getString("data");
+                                JSONObject jsonDataObject = new JSONObject(dataS);
+                                String name =  jsonDataObject.getString("name");
+                                String email =  jsonDataObject.getString("email");
+                                String username =  jsonDataObject.getString("username");
+                                String phone_number =  jsonDataObject.getString("phone_number");
+
+                                String tooo2 = "name: "+name+"\nemail: "+email+"username: "+username+"\nphone_number: "+phone_number;
+                                Toast.makeText(context, tooo2, Toast.LENGTH_SHORT).show();
+
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }, error -> {
+
+                }) {
+                    @Override
+                    protected Map<String, String> getParams() {
+
+                        Map<String, String> params = new HashMap<>();
+
+                        params.put("app_passcode", app_passcode);
+                        params.put("app_uid", app_uid);
+                        params.put("tbs_uid", tbs_uid);
+                        params.put("auth_password", auth_password);
+                        params.put("verify_password", verify_password);
+
+                        return params;
+                    }
+                };
+                RequestQueue requestQueue_createLogIn = Volley.newRequestQueue(context);
+                requestQueue_createLogIn.add(createSignUp);
 
             }
         }
