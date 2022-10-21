@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,12 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:background="#9fff"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -26,23 +25,23 @@
 
 
                 <LinearLayout
+                    android:id="@+id/logInPanel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
-                    android:visibility="gone"
-                    android:id="@+id/logInPanel"
-                    android:padding="10dp">
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone">
 
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/logo"
-                        android:gravity="center"
                         android:layout_marginVertical="50dp"
-                        app:civ_border_width="3dp"
-                        app:civ_border_color="@color/bg_btn_1"/>
+                        android:gravity="center"
+                        android:src="@drawable/logo"
+                        app:civ_border_color="@color/bg_btn_1"
+                        app:civ_border_width="3dp" />
 
 
                     <EditText
@@ -90,10 +89,10 @@
                         android:id="@+id/lLinkSendMsg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingHorizontal="50dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/ibarra_real_nova_bold"
                         android:minHeight="48dp"
+                        android:paddingHorizontal="50dp"
                         android:text="Check your mail inbox / Spam Folder / Update Folder..."
                         android:textColor="@color/bg_btn_2"
                         android:textSize="20dp"
@@ -104,23 +103,21 @@
                         android:id="@+id/lCheck"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:text="Check Now"
-                        android:textSize="75px"
-                        android:fontFamily="@font/ibarra_real_nova_bold"
-                        android:textAllCaps="false"
                         android:layout_marginTop="10dp"
-                        android:onClick="lCheck"
                         android:background="@drawable/custombutton2"
-                        android:textColor="@color/bg_txt_1"/>
-
-
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="lCheck"
+                        android:text="Check Now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
 
 
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="2dp"
-                        android:background="#3fff"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:background="#3fff" />
 
                     <TextView
                         android:id="@+id/lResendMail"
@@ -134,7 +131,6 @@
                         android:textColor="@color/bg_btn_2"
                         android:textSize="25dp"
                         android:textStyle="bold" />
-
 
 
                     <TextView
@@ -153,21 +149,21 @@
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="2dp"
-                        android:background="#3fff"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:background="#3fff" />
 
                     <Button
                         android:id="@+id/lSignUp"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:text="Sign Up"
-                        android:textSize="75px"
-                        android:fontFamily="@font/ibarra_real_nova_bold"
-                        android:textAllCaps="false"
                         android:layout_marginTop="10dp"
-                        android:onClick="lSignUp"
                         android:background="@drawable/custombutton2"
-                        android:textColor="@color/bg_txt_1"/>
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="lSignUp"
+                        android:text="Sign Up"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
                 </LinearLayout>
 
 
@@ -318,13 +314,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/signUpPanel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:gravity="center"
-                    android:visibility="visible"
-                    android:id="@+id/signUpPanel"
-                    android:padding="10dp">
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="visible">
 
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -344,7 +340,7 @@
                         android:layout_height="48dp"
                         android:layout_marginVertical="5dp"
                         android:layout_marginTop="15dp"
-                        android:autofillHints=""
+                        android:autofillHints="name"
                         android:background="@drawable/custombutton"
                         android:fontFamily="@font/ibarra_real_nova_bold"
                         android:gravity="center"
@@ -358,11 +354,13 @@
                         android:layout_height="48dp"
                         android:layout_marginVertical="5dp"
                         android:layout_marginTop="15dp"
+                        android:autofillHints="phone"
                         android:background="@drawable/custombutton"
                         android:fontFamily="@font/ibarra_real_nova_bold"
                         android:gravity="center"
                         android:hint="Phone Number"
-                        android:inputType="phone"
+                        android:digits="+0123456789"
+                        android:inputType="number|phone"
                         android:textColorHint="#000" />
 
                     <EditText
@@ -407,29 +405,27 @@
                         android:textColorHint="#000" />
 
 
-
-
                     <Button
                         android:id="@+id/sSignUp"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:text="Sign Up"
-                        android:textSize="75px"
-                        android:fontFamily="@font/ibarra_real_nova_bold"
-                        android:textAllCaps="false"
                         android:layout_marginTop="10dp"
-                        android:onClick="sSignUp"
                         android:background="@drawable/custombutton2"
-                        android:textColor="@color/bg_txt_1"/>
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="sSignUp"
+                        android:text="Sign Up"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
 
                     <TextView
                         android:id="@+id/sLinkSendMsg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingHorizontal="50dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/ibarra_real_nova_bold"
                         android:minHeight="48dp"
+                        android:paddingHorizontal="50dp"
                         android:text="Check your mail inbox / Spam Folder / Update Folder..."
                         android:textColor="@color/bg_btn_2"
                         android:textSize="20dp"
@@ -439,20 +435,20 @@
                         android:id="@+id/sCheck"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:text="Check Now"
-                        android:textSize="75px"
-                        android:fontFamily="@font/ibarra_real_nova_bold"
-                        android:textAllCaps="false"
                         android:layout_marginTop="10dp"
-                        android:onClick="sCheck"
                         android:background="@drawable/custombutton2"
-                        android:textColor="@color/bg_txt_1"/>
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="sCheck"
+                        android:text="Check Now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
 
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="2dp"
-                        android:background="#3fff"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:background="#3fff" />
 
                     <TextView
                         android:id="@+id/sResendMail"
@@ -479,28 +475,28 @@
                         android:textColor="@color/bg_btn_2"
                         android:textSize="25dp"
                         android:textStyle="bold" />
+
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="2dp"
-                        android:background="#3fff"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="15dp"
+                        android:background="#3fff" />
 
                     <Button
                         android:id="@+id/sLogIn"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:text="Log In"
-                        android:textSize="75px"
-                        android:fontFamily="@font/ibarra_real_nova_bold"
-                        android:textAllCaps="false"
                         android:layout_marginTop="10dp"
-                        android:onClick="sLogIn"
                         android:background="@drawable/custombutton2"
-                        android:textColor="@color/bg_txt_1"/>
+                        android:fontFamily="@font/ibarra_real_nova_bold"
+                        android:onClick="sLogIn"
+                        android:text="Log In"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bg_txt_1"
+                        android:textSize="75px" />
                 </LinearLayout>
 
             </LinearLayout>
-
 
 
         </ScrollView>
@@ -510,11 +506,11 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:visibility="gone"
         android:id="@+id/time_show"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="50dp"
-        android:layout_height="wrap_content">
+        android:visibility="gone">
 
 
         <pl.droidsonroids.gif.GifImageView
@@ -529,7 +525,7 @@
             app:civ_border_width="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/watch_time"
@@ -543,9 +539,9 @@
             android:textColor="@color/bg_txt_2"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
