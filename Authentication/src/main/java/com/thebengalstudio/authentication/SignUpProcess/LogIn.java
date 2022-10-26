@@ -242,6 +242,7 @@ public class LogIn extends AppCompatActivity {
                         case "202":
                             BeautifulToast.makeText(context, message, Toast.LENGTH_LONG, R.style.toaststyle_info).show();
                             break;
+                        case "203":
                         case "404":
                         case "401":
                             BeautifulToast.makeText(context, message, Toast.LENGTH_LONG, R.style.toaststyle_error).show();
